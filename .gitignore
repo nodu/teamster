@@ -1,0 +1,24 @@
+# Python bytecode and optimization files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django-specific files
+*.log
+local_settings.py
+db.sqlite3
+media/*
+static/*
+
+# Virtual environment files
+venv/
+.env
+
+# IDE-specific files
+.idea/
+.vscode/
+*.swp
+
+# macOS-specific files
+.DS_Store

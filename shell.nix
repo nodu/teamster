@@ -13,6 +13,8 @@ pkgs.mkShell {
     pkgs.direnv
     pkgs.python3
     pkgs.python311Packages.pip
+    pkgs.python311Packages.django
+    pkgs.python311Packages.djangorestframework
     pkgs.nodejs_22
     pkgs.cowsay
   ];

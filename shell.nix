@@ -17,6 +17,7 @@ pkgs.mkShell {
     pkgs.python311Packages.djangorestframework
     pkgs.nodejs_22
     pkgs.cowsay
+    pkgs.gnumake
   ];
   shellHook = ''
     cowsay "Here is your shell environment!"

@@ -9,3 +9,6 @@ migrate:
 
 test-api:
 	python3 manage.py test
+
+serve-ui-dev:
+	cd ./ui && npm run dev

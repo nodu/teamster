@@ -12,6 +12,8 @@ Currently, Django dependencies, are handled by `Nix`. For the UI, install depend
 
 As a project centric helper, this project uses a `makefile`. See the contents for common operations such as setting up the Django server, UI server, running the test suites, etc.
 
+First run `make migrate` to get your local sqlite database up to date with the schema changes. Then:
+
 Run Django server: `make serve`
 
 Run UI server: `make serve-ui-dev`
@@ -20,4 +22,4 @@ Happy coding!
 
 ### Testing
 
-To test this project, run the respective Django and UI unit test suites with: 'make test-api' and 'make test-ui'.
+To test this project, run the respective Django and UI unit test suites with: `make test-api` and `make test-ui`.

@@ -17,3 +17,7 @@ Run Django server: `make serve`
 Run UI server: `make serve-ui-dev`
 
 Happy coding!
+
+### Testing
+
+To test this project, run the respective Django and UI unit test suites with: 'make test-api' and 'make test-ui'.

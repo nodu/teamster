@@ -15,6 +15,7 @@ pkgs.mkShell {
     pkgs.python311Packages.pip
     pkgs.python311Packages.django
     pkgs.python311Packages.djangorestframework
+    pkgs.python311Packages.django-cors-headers
     pkgs.nodejs_22
     pkgs.cowsay
     pkgs.gnumake

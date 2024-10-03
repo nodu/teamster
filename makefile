@@ -12,3 +12,15 @@ test-api:
 
 serve-ui-dev:
 	cd ./ui && npm run dev
+
+test-ui:
+	cd ./ui && npm test
+
+build-ui:
+	cd ./ui && npm run build
+
+serve-ui-preview:
+	cd ./ui && npm run build && npm run preview
+
+lint-ui:
+	cd ./ui && npm run lint

@@ -6,6 +6,7 @@ import { Member } from "../types";
 
 const EditMember: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const [err, setErr] = useState("");
   const [formData, setFormData] = useState<Member>({
     first_name: "",
     last_name: "",
@@ -54,6 +55,7 @@ const EditMember: React.FC = () => {
       .catch((error) => {
         alert("Failed to update member!");
         console.error("There was an error updating the member!", error);
+        setErr(JSON.stringify(error.response.data));
       });
   };
 
@@ -102,6 +104,7 @@ const EditMember: React.FC = () => {
       <h2>Edit Team Member</h2>
       <p>Edit contact info, location and role.</p>
       <MemberForm
+        err={err}
         formData={formData}
         handleSubmit={handleSubmit}
         handleChange={handleChange}

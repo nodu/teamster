@@ -39,7 +39,7 @@ This project uses [Nix](https://nixos.org/download/), a package and system manag
    direnv allow .
    ```
 
-   > **Tip:** If you prefer not to use `direnv`, you can manually enter the Nix shell by running `nix-shell` in the project directory whenever you need the environment.
+   > **Tip:** If you prefer not to use `direnv`, you can manually enter the Nix development environment by running `nix develop` in the project directory whenever you need the environment.
 
 4. **Initialize the Project**
    Once you're inside the Nix development shell, initialize the basic Django SQLite database, apply database migrations, and install the UI dependencies:

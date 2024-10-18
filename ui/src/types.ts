@@ -12,4 +12,5 @@ export interface MemberFormProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent) => void;
   deleteMember?: (e: React.UIEvent) => void;
+  err?: string;
 }

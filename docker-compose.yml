@@ -1,0 +1,12 @@
+services:
+  api:
+    image: nodu/teamster:api
+    command: /app/entrypoint.sh
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONUNBUFFERED: 1
+  ui:
+    image: nodu/teamster:ui
+    ports:
+      - "80:3000"

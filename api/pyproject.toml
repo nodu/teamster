@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "teamster"
+version = "0.1.0"
+description = ""
+authors = ["Matt Nodurfth <mnodurft@gmail.com>"]
+
+packages = [
+    { include = "config" },
+    { include = "members" },
+]
+
+include = [
+    "manage.py"
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.1.2"
+djangorestframework = "^3.15.2"
+django-cors-headers = "^4.5.0"
+
+[tool.poetry.scripts]
+app = "manage:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

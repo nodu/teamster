@@ -1,6 +1,7 @@
 import { MemberFormProps } from "../types";
 
 const MemberForm: React.FC<MemberFormProps> = ({
+  err,
   formData,
   handleChange,
   handleSubmit,
@@ -8,6 +9,7 @@ const MemberForm: React.FC<MemberFormProps> = ({
 }) => {
   return (
     <>
+      <div style={{ color: "red" }}>{err}</div>
       <form onSubmit={handleSubmit}>
         <h3>Info</h3>
         <label>

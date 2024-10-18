@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DATABASE_PATH = os.getenv("DJANGO_DB_PATH", BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,7 +27,7 @@ SECRET_KEY = "django-insecure-syji+#&p#k=kyfalu1*%nm!+1dbxdj+ks0@8xnse-*z*63rd57
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
 
 
 # Application definition
@@ -53,7 +55,11 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:4173"]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost",
+    "http://localhost:5173",
+    "http://localhost:4173",
+]
 
 ROOT_URLCONF = "config.urls"
 
@@ -82,7 +88,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": Path(DATABASE_PATH) / "db.sqlite3",
     }
 }
 

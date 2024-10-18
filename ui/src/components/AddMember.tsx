@@ -5,6 +5,7 @@ import MemberForm from "./MemberForm";
 import { Member } from "../types";
 
 const AddMember: React.FC = () => {
+  const [err, setErr] = useState("");
   const [formData, setFormData] = useState<Member>({
     first_name: "",
     last_name: "",
@@ -32,6 +33,7 @@ const AddMember: React.FC = () => {
       .catch((error) => {
         alert("Failed to add member!");
         console.error("There was an error adding the member!", error);
+        setErr(JSON.stringify(error.response.data));
       });
   };
 
@@ -58,6 +60,7 @@ const AddMember: React.FC = () => {
       <h2>Add New Team Member</h2>
       <p>Set email, location and role.</p>
       <MemberForm
+        err={err}
         formData={formData}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
